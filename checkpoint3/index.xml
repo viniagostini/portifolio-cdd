@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Checkpoint3s on Hugo tranquilpeak theme</title>
+    <link>/portifolio-cdd/checkpoint3/</link>
+    <description>Recent content in Checkpoint3s on Hugo tranquilpeak theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/portifolio-cdd/checkpoint3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>/portifolio-cdd/checkpoint3/checkpoint3.nb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/portifolio-cdd/checkpoint3/checkpoint3.nb/</guid>
+      <description>EDA Projeto 1 - Checkpoint 3            code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs) { hljs.configure({languages: []}); hljs.initHighlightingOnLoad(); if (document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) { window.setTimeout(function() { hljs.initHighlighting(); }, 0); } }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .</description>
+    </item>
+    
+    <item>
+      <title>EDA Projeto 1 - Checkpoint 3</title>
+      <link>/portifolio-cdd/checkpoint3/checkpoint3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/portifolio-cdd/checkpoint3/checkpoint3/</guid>
+      <description>episodes = read_csv(here(&amp;quot;data/series_from_imdb.csv&amp;quot;), progress = FALSE, col_types = cols(.default = col_double(), series_name = col_character(), episode = col_character(), url = col_character(), season = col_character())) Pergunta 1: A longevidade das séries está associada a sua qualidade Estamos interessados em avaliar se a longevidade das séries está associada á sua qualidade. Ou seja, as séries duram mais devido á sua qualidade?
+É importante esclarecer os critérios a serem adorados para longevidade e qualidade.</description>
+    </item>
+    
+  </channel>
+</rss>

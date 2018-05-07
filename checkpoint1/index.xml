@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Checkpoint1s on Hugo tranquilpeak theme</title>
+    <link>/portifolio-cdd/checkpoint1/</link>
+    <description>Recent content in Checkpoint1s on Hugo tranquilpeak theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/portifolio-cdd/checkpoint1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>EDA Projeto 1 Checkpoint 1</title>
+      <link>/portifolio-cdd/checkpoint1/checkpoint1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/portifolio-cdd/checkpoint1/checkpoint1/</guid>
+      <description>episodios = read_csv(here(&amp;quot;data/series_from_imdb.csv&amp;quot;), progress = FALSE, col_types = cols(.default = col_double(), series_name = col_character(), episode = col_character(), url = col_character(), season = col_character())) %&amp;gt;% filter(series_name %in% c(&amp;quot;Friends&amp;quot;, &amp;quot;How I Met Your Mother&amp;quot;)) Problema: Escolher entre 2 e 4 séries da base de dados e responder as seguintes questões:
+As séries escolhidas foram How I Met Your Mother e Friends, que são séries do mesmo gênero, com temáticas parecidas e com um numero próximo de temporadas.</description>
+    </item>
+    
+  </channel>
+</rss>

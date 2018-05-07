@@ -1,0 +1,739 @@
+
+
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.40.2 with theme Tranquilpeak 0.4.3-BETA">
+    <title>EDA Projeto 1 - Checkpoint 3</title>
+    <meta name="author" content="Vinicius Agostini">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="/portifolio-cdd/favicon.png">
+    
+
+    
+    <meta name="description" content="episodes = read_csv(here(&quot;data/series_from_imdb.csv&quot;), progress = FALSE, col_types = cols(.default = col_double(), series_name = col_character(), episode = col_character(), url = col_character(), season = col_character())) Pergunta 1: A longevidade das séries está associada a sua qualidade Estamos interessados em avaliar se a longevidade das séries está associada á sua qualidade. Ou seja, as séries duram mais devido á sua qualidade?
+É importante esclarecer os critérios a serem adorados para longevidade e qualidade.">
+    <meta property="og:description" content="episodes = read_csv(here(&quot;data/series_from_imdb.csv&quot;), progress = FALSE, col_types = cols(.default = col_double(), series_name = col_character(), episode = col_character(), url = col_character(), season = col_character())) Pergunta 1: A longevidade das séries está associada a sua qualidade Estamos interessados em avaliar se a longevidade das séries está associada á sua qualidade. Ou seja, as séries duram mais devido á sua qualidade?
+É importante esclarecer os critérios a serem adorados para longevidade e qualidade.">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="EDA Projeto 1 - Checkpoint 3">
+    <meta property="og:url" content="/checkpoint3/checkpoint3/">
+    <meta property="og:site_name" content="Hugo tranquilpeak theme">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Hugo tranquilpeak theme">
+    <meta name="twitter:description" content="episodes = read_csv(here(&quot;data/series_from_imdb.csv&quot;), progress = FALSE, col_types = cols(.default = col_double(), series_name = col_character(), episode = col_character(), url = col_character(), season = col_character())) Pergunta 1: A longevidade das séries está associada a sua qualidade Estamos interessados em avaliar se a longevidade das séries está associada á sua qualidade. Ou seja, as séries duram mais devido á sua qualidade?
+É importante esclarecer os critérios a serem adorados para longevidade e qualidade.">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/35ebc3103001a0ca7ef60c7cf2430c08?s=640">
+    
+
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="/portifolio-cdd/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="/portifolio-cdd/">Hugo tranquilpeak theme</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="/portifolio-cdd/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//www.gravatar.com/avatar/35ebc3103001a0ca7ef60c7cf2430c08?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="/portifolio-cdd/#about">
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/35ebc3103001a0ca7ef60c7cf2430c08?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Vinicius Agostini</h4>
+        
+          <h5 class="sidebar-profile-bio">Super bio with markdown support <strong>COOL</strong></h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/portifolio-cdd/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/portifolio-cdd/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/portifolio-cdd/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/portifolio-cdd/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/portifolio-cdd/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/kakawait" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stackoverflow.com/users/636472/kakawait" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+      
+      <span class="sidebar-button-desc">Stack Overflow</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/portifolio-cdd/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      EDA Projeto 1 - Checkpoint 3
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="0001-01-01T00:00:00Z">
+        
+  January 1, 1
+
+      </time>
+    
+    
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <pre class="r"><code>episodes = read_csv(here(&quot;data/series_from_imdb.csv&quot;), 
+                    progress = FALSE,
+                    col_types = cols(.default = col_double(), 
+                                     series_name = col_character(), 
+                                     episode = col_character(), 
+                                     url = col_character(),
+                                     season = col_character()))</code></pre>
+<div id="pergunta-1-a-longevidade-das-series-esta-associada-a-sua-qualidade" class="section level1">
+<h1>Pergunta 1: A longevidade das séries está associada a sua qualidade</h1>
+<p>Estamos interessados em avaliar se a longevidade das séries está associada á sua qualidade. Ou seja, as séries duram mais devido á sua qualidade?</p>
+<p>É importante esclarecer os critérios a serem adorados para <strong>longevidade</strong> e <strong>qualidade</strong>.</p>
+<p>Mediremos a <strong>logevidade</strong> das séries através do número de episódios produzidos. Ou seja, as séries com maior longevidade são as que possuem mais episódios.</p>
+<p>Mediremos <strong>qualidade</strong> através da ´Avaliação das Séries´, cada Série terá uma avaliação associada, que será calculada através da ´mediana´ da avaliação dos episódios. Ou seja, as séries com maior qualidade são as mais bem avaliadas.</p>
+<blockquote>
+<p>Veja aqui porque a ´mediana´ foi escolhida ao invés da ´média´: <a href="https://goo.gl/VjMgn4" class="uri">https://goo.gl/VjMgn4</a></p>
+</blockquote>
+<p>Para essa análise, contamos com <strong>511</strong> séries diferentes.</p>
+<pre class="r"><code>diferent_series = 
+    episodes %&gt;%
+    distinct(series_name)
+
+number_of_series = 
+    diferent_series %&gt;%
+    summarise(Número_de_Series = n())
+
+show(number_of_series)</code></pre>
+<pre><code>## # A tibble: 1 x 1
+##   Número_de_Series
+##              &lt;int&gt;
+## 1              511</code></pre>
+<p>Contudo, vamos restringir essa análise ás séries com pelo menos 20 episódios, para evitar que casos como esse interfiram na nossa análise:</p>
+<pre class="r"><code>series_by_longevity_and_quality =
+   episodes %&gt;%
+   group_by(series_name) %&gt;%
+   summarise(numero_episodios = n(),
+             avaliacao = median(user_rating)) 
+
+series_with_small_number_of_episodes =
+   series_by_longevity_and_quality %&gt;%
+   filter(numero_episodios &lt; 5)
+show(series_with_small_number_of_episodes)</code></pre>
+<pre><code>## # A tibble: 12 x 3
+##    series_name                     numero_episodios avaliacao
+##    &lt;chr&gt;                                      &lt;int&gt;     &lt;dbl&gt;
+##  1 Bouquet Of Barbed Wire                         1      6.20
+##  2 Chasing Shadows                                4      8.05
+##  3 Hamarinn (The Cliff)                           1      6.20
+##  4 Ice Age Giants                                 3      7.60
+##  5 Inside The Medieval Sex                        2      7.25
+##  6 Kdabra                                         1      8.80
+##  7 Southcliffe                                    4      7.70
+##  8 Super Girl                                     1      9.00
+##  9 The Crimson Petal And The White                4      7.60
+## 10 The Playboy Club                               3      7.30
+## 11 We Are Men                                     2      6.80
+## 12 What Remains                                   4      7.40</code></pre>
+<p>Pois não queremos que séries com pouquíssimos episódios influenciem na nossa análise, tendo em vista que a medida de qualidade para estas não é tão confiável.</p>
+<p>Removendo essas séries do nosso conjunto de dados, ficamos com <strong>353</strong> séries.</p>
+<pre class="r"><code>series_by_longevity_and_quality =
+   episodes %&gt;%
+   group_by(series_name) %&gt;%
+   summarise(numero_episodios = n(),
+             avaliacao = median(user_rating)) %&gt;%
+   filter(numero_episodios &gt; 20)
+
+number_of_series_filtered = 
+    series_by_longevity_and_quality %&gt;%
+    summarise(Número_de_Series_Com_Mais_de_20_Episódios = n())
+
+show(number_of_series_filtered)</code></pre>
+<pre><code>## # A tibble: 1 x 1
+##   Número_de_Series_Com_Mais_de_20_Episódios
+##                                       &lt;int&gt;
+## 1                                       353</code></pre>
+<p>Vamos agora verificar o ´Coeficiente de Correlação Linear´ entre o <strong>Numero de Episódios</strong> e a <strong>Avaliações dos Usuários</strong> para ver se há indícios fortes de uma relação linear entre essas duas variáveis.</p>
+<blockquote>
+<p>O ´Coeficiente de Correlação Linear´ é uma medida utilizada para medir o quão fortemente associadas estão duas variáveis distintas de forma linear. Ou seja, diz se, a medida que uma cresce, a outra cresce também ou se a medida que uma decresce a outra cresce e vice versa. O do coeficiente está sempre no intrevalo entre -1 e 1, e quanto mais próximo dos limites do intervalo, mais forte é a correlação entre as duas variáveis, indicando que há uma associação entre as duas.</p>
+</blockquote>
+<pre class="r"><code>correlacao_linear_episodios_vs_avaliacoes = 
+    series_by_longevity_and_quality %&gt;%
+    summarise(Coeficiente_de_Correlação_Linear = cor(avaliacao, numero_episodios))
+show(correlacao_linear_episodios_vs_avaliacoes)</code></pre>
+<pre><code>## # A tibble: 1 x 1
+##   Coeficiente_de_Correlação_Linear
+##                              &lt;dbl&gt;
+## 1                           -0.218</code></pre>
+<p>Vemos que o ´Coeficiente de Correlação Linear´ está muito próximo de 0, o que infica uma relação muito fraca entre as duas variáveis.</p>
+<p>Vejamos um grafico que ilusta melhor essa associação fraca entre as variáveis.</p>
+<pre class="r"><code>series_by_longevity_and_quality %&gt;%
+    ggplot(aes(x = numero_episodios, y = avaliacao)) +
+        ggtitle(&quot;Avaliações por Número de Episódios&quot;) +
+        geom_point()</code></pre>
+<p><img src="/portifolio-cdd/portifolio-cdd/checkpoint3/checkpoint3_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Esse gráfico não ilustra muita coisa por conta do número de pontos sobrepostos, assim, tiraremos alguamas amostras aleatórias, perdendo em precisão, mas ganhando em visualização dos dados.</p>
+<pre class="r"><code>series_by_longevity_and_quality %&gt;%
+    sample_n(60) %&gt;%
+    ggplot(aes(x = numero_episodios, y = avaliacao)) +
+        ggtitle(&quot;Avaliações por Número de Episódios&quot;) +
+        geom_point()</code></pre>
+<p><img src="/portifolio-cdd/portifolio-cdd/checkpoint3/checkpoint3_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Observando esse gŕafico, podemos dizer que não há uma função que se encaixe em algo parecido com isso, podendo afirmar assim, que a relação entre a <strong>Qualidade</strong> e a <strong>Longevidade</strong> das séries analisadas é muito próxima de ser nula.</p>
+<p>Sabendo que a <strong>Qualidade</strong> não é um fator que influencia de forma significativa na longevidade das séries, será que existe algum outro fator que influencie?</p>
+<div id="a-longevidade-das-series-esta-associada-a-sua-popularidade" class="section level2">
+<h2>A longevidade das séries está associada a sua popularidade?</h2>
+<p>A <strong>Longevidade</strong> das séries será medida da mesma forma que na análise anterior. A <strong>Popularidade</strong> será medida através da <strong>mediana</strong> do número de votos que cada episódio das séries obteve.</p>
+<p>Ainda, usaremos a mesma abordagem em relação aos dados, onde removeremos do nosso conjunto as séries com menos de 20 episódios.</p>
+<p>Temos ainda <strong>353</strong> Séries a serem analisadas.</p>
+<p>Vamos agora observar o <strong>Coeficiente de Correlação Linear</strong> entre <strong>Longevidade</strong> e a <strong>Popularidade</strong> das Séries.</p>
+<pre class="r"><code>series_by_longevity_and_popularity =
+   episodes %&gt;%
+   group_by(series_name) %&gt;%
+   summarise(numero_episodios = n(),
+             votos_usuarios = median(user_votes)) %&gt;%
+   filter(numero_episodios &gt; 20)
+
+correlacao_linear_episodios_vs_popularidade = 
+    series_by_longevity_and_popularity %&gt;%
+    summarise(Coeficiente_de_Correlação_Linear = cor(numero_episodios, votos_usuarios))
+show(correlacao_linear_episodios_vs_popularidade)</code></pre>
+<pre><code>## # A tibble: 1 x 1
+##   Coeficiente_de_Correlação_Linear
+##                              &lt;dbl&gt;
+## 1                         -0.00494</code></pre>
+<p>Podemos observar que o Coeficiente de Correlação Linear entre <strong>Longevidade</strong> e <strong>Popularidade</strong> ficou ainda mais próximo de zero do que o de <strong>Longevidade</strong> e <strong>Qualidade</strong>, podendo afirmar assim que a relação entre essas duas é ínfima.</p>
+</div>
+</div>
+<div id="pergunta-2-os-episodios-mais-populares-sao-os-mais-amados-ou-os-mais-odiados" class="section level1">
+<h1>Pergunta 2: Os episódios mais populares são os mais amados ou os mais odiados?</h1>
+<p>Para essa análise avaliaremos os <strong>episódios mais populares</strong> a partir do número de avaliações de usuários.</p>
+<p>Ainda, consideraremos <strong>“amar” um episódio</strong> significa dar nota 10 para o mesmo, ao passo que <strong>“odiar” um episódio</strong> significa atribuir nota 1.</p>
+<p>Assim, restingiremos nossa análise aos 30 episódios mais populares da nossa base de dados, que são:</p>
+<pre class="r"><code>most_popular_episodes = 
+    episodes %&gt;%
+    select(series_name, episode, user_votes, r1, r10) %&gt;%
+    arrange(desc(user_votes)) %&gt;%
+    head(30)
+show(most_popular_episodes)</code></pre>
+<pre><code>## # A tibble: 30 x 5
+##    series_name      episode                       user_votes      r1   r10
+##    &lt;chr&gt;            &lt;chr&gt;                              &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
+##  1 Game of Thrones  Battle of the Bastards           138353. 0.0155  0.922
+##  2 Game of Thrones  The Winds of Winter               93680. 0.0119  0.929
+##  3 Breaking Bad     Ozymandias                        87991. 0.0383  0.713
+##  4 Game of Thrones  Hardhome                          59404. 0.0679  0.299
+##  5 Breaking Bad     Felina                            59235. 0.0326  0.657
+##  6 Game of Thrones  The Rains of Castamere            55077. 0.0275  0.440
+##  7 Game of Thrones  The Door                          42617. 0.00781 0.817
+##  8 Game of Thrones  The Lion and the Rose             31235. 0.0187  0.798
+##  9 The Walking Dead The Day Will Come When You W…     30624. 0.0592  0.649
+## 10 Game of Thrones  Home                              29785. 0.0128  0.701
+## # ... with 20 more rows</code></pre>
+<p>Vejamos agora dois gráficos, que mostram a proporção de notas 10 e notas 1 por episódio:</p>
+<pre class="r"><code>most_popular_episodes %&gt;%
+    ggplot(aes(x = reorder(episode, -r10), y = r10, fill = series_name)) +
+    ggtitle(&quot;Notas 10 por episódio&quot;) +
+    geom_bar(stat = &quot;identity&quot;) + coord_flip()</code></pre>
+<p><img src="/portifolio-cdd/portifolio-cdd/checkpoint3/checkpoint3_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<pre class="r"><code>most_popular_episodes %&gt;%
+    ggplot(aes(x = reorder(episode, -r1), y = r1, fill = series_name)) +
+    ggtitle(&quot;Notas 1 por episódio&quot;) +
+    geom_bar(stat = &quot;identity&quot;) + coord_flip()</code></pre>
+<p><img src="/portifolio-cdd/portifolio-cdd/checkpoint3/checkpoint3_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>Parece que os episódios mais populares são muito mais amados que odiados, dos 30 episódios analisados, 19 receberam mais de 50% de votos “amorosos”, ao passo que nenhum recebeu mais de 1% de votos de “ódio”.</p>
+<p>Outra coisa interessante que podemos notar desses gráficos é que em uma base de dados com 511 Séries os 30 episódios mais populares estão concentrados nas mãos de apenas 4 séries.</p>
+<p>Podemos nos perguntar então:</p>
+<div id="quais-as-series-que-possuem-os-episodios-mais-populares" class="section level2">
+<h2>Quais as séries que possuem os episódios mais populares?</h2>
+<p>Para responder essa pergunta vamos expandir um pouco o número de episódios analisados.</p>
+<p>Selecionaremos os 300 episódios mais bem avaliados</p>
+<pre class="r"><code>most_popular_episodes = 
+    episodes %&gt;%
+    select(series_name, episode, user_votes, r1, r10) %&gt;%
+    arrange(desc(user_votes)) %&gt;%
+    head(300)
+
+series_with_most_popular_episodes =
+   most_popular_episodes %&gt;%
+   group_by(series_name) %&gt;%
+   summarise(episodios = n(),
+             avaliacoes = sum(user_votes))
+
+series_with_most_popular_episodes %&gt;%
+    ggplot(aes(x = reorder(series_name, -episodios), y = episodios)) +
+    ggtitle(&quot;Numero de episódios entre os 300 mais populares&quot;) +
+    geom_bar(stat = &quot;identity&quot;) + coord_flip()</code></pre>
+<p><img src="/portifolio-cdd/portifolio-cdd/checkpoint3/checkpoint3_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>Podemos observar que os 300 episódios mais populares estão concentrados nas mãos de apenas 25 séries. E ainda assim, há um discrepância grande entre essas séries.</p>
+</div>
+</div>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+            
+            
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/portifolio-cdd/checkpoint3/checkpoint3.nb/" data-tooltip="">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/portifolio-cdd/checkpoint3/checkpoint3/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/portifolio-cdd/checkpoint3/checkpoint3/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/portifolio-cdd/checkpoint3/checkpoint3/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 Vinicius Agostini. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/portifolio-cdd/checkpoint3/checkpoint3.nb/" data-tooltip="">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/portifolio-cdd/checkpoint3/checkpoint3/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/portifolio-cdd/checkpoint3/checkpoint3/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/portifolio-cdd/checkpoint3/checkpoint3/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2Fportifolio-cdd%2Fcheckpoint3%2Fcheckpoint3%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2Fportifolio-cdd%2Fcheckpoint3%2Fcheckpoint3%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2Fportifolio-cdd%2Fcheckpoint3%2Fcheckpoint3%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/35ebc3103001a0ca7ef60c7cf2430c08?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Vinicius Agostini</h4>
+    
+      <div id="about-card-bio">Super bio with markdown support <strong>COOL</strong></div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Student
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Brazil
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         0 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('/portifolio-cdd/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="/portifolio-cdd/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = '\/portifolio-cdd\/checkpoint3\/checkpoint3\/';
+          
+            this.page.identifier = '\/checkpoint3\/checkpoint3\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+    
+  </body>
+</html>
+

@@ -1,0 +1,664 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.40.2 with theme Tranquilpeak 0.4.3-BETA">
+    <title>EDA Projeto 1 Checkpoint 1</title>
+    <meta name="author" content="Vinicius Agostini">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="/favicon.png">
+    
+
+    
+    <meta name="description" content="episodios = read_csv(here(&quot;data/series_from_imdb.csv&quot;), progress = FALSE, col_types = cols(.default = col_double(), series_name = col_character(), episode = col_character(), url = col_character(), season = col_character())) %&gt;% filter(series_name %in% c(&quot;Friends&quot;, &quot;How I Met Your Mother&quot;)) Problema: Escolher entre 2 e 4 séries da base de dados e responder as seguintes questões:
+As séries escolhidas foram How I Met Your Mother e Friends, que são séries do mesmo gênero, com temáticas parecidas e com um numero próximo de temporadas.">
+    <meta property="og:description" content="episodios = read_csv(here(&quot;data/series_from_imdb.csv&quot;), progress = FALSE, col_types = cols(.default = col_double(), series_name = col_character(), episode = col_character(), url = col_character(), season = col_character())) %&gt;% filter(series_name %in% c(&quot;Friends&quot;, &quot;How I Met Your Mother&quot;)) Problema: Escolher entre 2 e 4 séries da base de dados e responder as seguintes questões:
+As séries escolhidas foram How I Met Your Mother e Friends, que são séries do mesmo gênero, com temáticas parecidas e com um numero próximo de temporadas.">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="EDA Projeto 1 Checkpoint 1">
+    <meta property="og:url" content="/1/01/eda-projeto-1-checkpoint-1/">
+    <meta property="og:site_name" content="Hugo tranquilpeak theme">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Hugo tranquilpeak theme">
+    <meta name="twitter:description" content="episodios = read_csv(here(&quot;data/series_from_imdb.csv&quot;), progress = FALSE, col_types = cols(.default = col_double(), series_name = col_character(), episode = col_character(), url = col_character(), season = col_character())) %&gt;% filter(series_name %in% c(&quot;Friends&quot;, &quot;How I Met Your Mother&quot;)) Problema: Escolher entre 2 e 4 séries da base de dados e responder as seguintes questões:
+As séries escolhidas foram How I Met Your Mother e Friends, que são séries do mesmo gênero, com temáticas parecidas e com um numero próximo de temporadas.">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/35ebc3103001a0ca7ef60c7cf2430c08?s=640">
+    
+
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="/">Hugo tranquilpeak theme</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//www.gravatar.com/avatar/35ebc3103001a0ca7ef60c7cf2430c08?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="/#about">
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/35ebc3103001a0ca7ef60c7cf2430c08?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Vinicius Agostini</h4>
+        
+          <h5 class="sidebar-profile-bio">Super bio with markdown support <strong>COOL</strong></h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/kakawait">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stackoverflow.com/users/636472/kakawait">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+      
+      <span class="sidebar-button-desc">Stack Overflow</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      EDA Projeto 1 Checkpoint 1
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="0001-01-01T00:00:00Z">
+        
+  January 1, 1
+
+      </time>
+    
+    
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <pre class="r"><code>episodios = read_csv(here(&quot;data/series_from_imdb.csv&quot;), 
+                    progress = FALSE,
+                    col_types = cols(.default = col_double(), 
+                                     series_name = col_character(), 
+                                     episode = col_character(), 
+                                     url = col_character(),
+                                     season = col_character())) %&gt;% 
+    filter(series_name %in% c(&quot;Friends&quot;, &quot;How I Met Your Mother&quot;))</code></pre>
+<div id="problema" class="section level1">
+<h1>Problema:</h1>
+<p>Escolher entre 2 e 4 séries da base de dados e responder as seguintes questões:</p>
+<p>As séries escolhidas foram <strong>How I Met Your Mother</strong> e <strong>Friends</strong>, que são séries do mesmo gênero, com temáticas parecidas e com um numero próximo de temporadas.</p>
+<div id="pergunta-1-qual-das-series-que-voce-escolheu-e-mais-bem-avaliada-no-imdb-a-diferenca-e-grande-pequena-muda-de-acordo-com-as-temporadas-da-serie" class="section level3">
+<h3>Pergunta 1: Qual das séries que você escolheu é mais bem avaliada no IMDB? A diferença é grande? Pequena? Muda de acordo com as temporadas da série?</h3>
+<p>Fazendo a média da avaliação de todos os episódios das séries, temos que:</p>
+<pre class="r"><code>media_episodios =
+  episodios %&gt;%
+  group_by(series_name) %&gt;%
+    summarise(user_rating = mean(user_rating)) %&gt;%
+    arrange(desc(user_rating))
+
+media_episodios %&gt;%
+  ggplot(aes(x = reorder(series_name, user_rating), y = user_rating, fill = series_name)) +
+    geom_col(width = 0.7) + 
+    scale_y_continuous(breaks=seq(0, 10, 1)) +
+    xlab(&quot;Séries&quot;) + ylab(&quot;Média das avaliações dos usuários&quot;) +
+    coord_flip() + labs(fill = &quot;Séries&quot;)</code></pre>
+<p><img src="/post/checkpoint1_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Assim, podemos observar que utilizando a média das avaliações de todos os episódios de cada série como critério de comparação entre as séries, podemos observar que <strong>Friends</strong> leva uma pequena vantagens em relação à <strong>How I Met Your Mother</strong>.</p>
+<p>Contudo, utilizar a <code>média</code> de todos os dados do conjunto como instrumento de medida pode não ser uma boa forma de comparação, uma vez que essa forma de medir os dados é muito sussetível a valores muito discrepantes para um conjunto pequeno de dados.</p>
+<p>Visualizando dados de avaliações de usuários individualmente, temos:</p>
+<pre class="r"><code>episodios %&gt;%
+  ggplot(aes(x = series_name, y = user_rating, col = series_name)) +
+    geom_jitter() + 
+    xlab(&quot;Séries&quot;) + ylab(&quot;Avaliação dos Usuários&quot;) + labs(fill = &quot;Séries&quot;)</code></pre>
+<p><img src="/post/checkpoint1_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Vemos com isso que existem dados discrepantes que interferem na média das avaliações.</p>
+<p>Uma forma mais interessante então é avaliar os dados através da <code>mediana</code>, que nos dá um valor central no conjunto de dados e não sofre com interferências causadas por grandes discrepâncias nos dados.</p>
+<pre class="r"><code>episodios %&gt;%
+  ggplot(aes(x = series_name, y = user_rating, col=series_name)) +
+    geom_jitter(width = .4) + 
+    geom_boxplot(color=&quot;black&quot;, alpha=0) +
+    xlab(&quot;Séries&quot;) + ylab(&quot;Avaliação dos Usuários&quot;) + labs(fill = &quot;Séries&quot;)</code></pre>
+<p><img src="/post/checkpoint1_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Ao observarmos os valores das medianas (linha horizontal no meio da “caixa”) vemos que <strong>Friends</strong> ainda continua na frente.</p>
+<p>Assim, podemos concluir que, por uma pequena vantagem, <strong>Frieds</strong> é mais bem avaliada que <strong>How I Met Your Mother</strong>.</p>
+<p>Vejamos como é o resultado se analisarmos por temporada:</p>
+<pre class="r"><code>series_por_mediana =
+  episodios %&gt;%
+  mutate(season = as.integer(season)) %&gt;%
+  group_by(series_name, season) %&gt;%
+    summarise(user_rating = median(user_rating)) %&gt;%
+    arrange(desc(season)) 
+
+series_por_mediana %&gt;%
+ggplot(aes(x=season, y=user_rating, fill=factor(series_name)))+
+  geom_bar(stat=&quot;identity&quot;, position=&quot;dodge&quot;)+
+  scale_fill_discrete(name = &quot;Série&quot;) +
+  scale_x_discrete(name=&quot;Temporada&quot;, limits=c(1:10)) +    
+  ylab(&quot;Mediana das avaliações dos episódios&quot;)</code></pre>
+<p><img src="/post/checkpoint1_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Vemos que realmente, mesmo analisando por temporada, <strong>Friends</strong> é mais bem avaliada que <strong>How I Met Your Mother</strong>.</p>
+</div>
+<div id="pergunta-2-qual-das-series-que-voce-escolheu-tem-episodios-de-qualidade-mais-irregular-segundo-o-imdb-a-diferenca-e-grande-pequena" class="section level2">
+<h2>Pergunta 2: Qual das séries que você escolheu tem episódios de qualidade mais irregular segundo o IMDB? A diferença é grande? Pequena?</h2>
+<p>Utilizando o mesmo gráfico das medianas das séries, é possível ver a dispersão dos episódios:</p>
+<pre class="r"><code>episodios %&gt;%
+  ggplot(aes(x = series_name, y = user_rating, col=series_name)) +
+    geom_point() +
+    geom_jitter(width = .4) + 
+    geom_boxplot(color=&quot;black&quot;, alpha=0) +
+    xlab(&quot;Séries&quot;) + ylab(&quot;Avaliação dos Usuários&quot;) + labs(fill = &quot;Séries&quot;)</code></pre>
+<p><img src="/post/checkpoint1_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Podemos ver que os votos de <strong>Friends</strong> estão muito mais concentrados em torno da mediana que os de <strong>How I Met Your Mother</strong>, assim, podemos dizer que <strong>How I Met Your Mother</strong> é muito mais irregular.</p>
+</div>
+</div>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+            
+            
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/1/01/eda-projeto-1---checkpoint-3/" data-tooltip="EDA Projeto 1 - Checkpoint 3">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/1/01/eda-projeto-1-checkpoint-1/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/1/01/eda-projeto-1-checkpoint-1/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/1/01/eda-projeto-1-checkpoint-1/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 Vinicius Agostini. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/1/01/eda-projeto-1---checkpoint-3/" data-tooltip="EDA Projeto 1 - Checkpoint 3">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/1/01/eda-projeto-1-checkpoint-1/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/1/01/eda-projeto-1-checkpoint-1/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/1/01/eda-projeto-1-checkpoint-1/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2F1%2F01%2Feda-projeto-1-checkpoint-1%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2F1%2F01%2Feda-projeto-1-checkpoint-1%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2F1%2F01%2Feda-projeto-1-checkpoint-1%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/35ebc3103001a0ca7ef60c7cf2430c08?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Vinicius Agostini</h4>
+    
+      <div id="about-card-bio">Super bio with markdown support <strong>COOL</strong></div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Student
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Brazil
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/1/01/eda-projeto-1---checkpoint-3/">
+                <h3 class="media-heading">EDA Projeto 1 - Checkpoint 3</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 0001
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">episodes = read_csv(here(&quot;data/series_from_imdb.csv&quot;), progress = FALSE, col_types = cols(.default = col_double(), series_name = col_character(), episode = col_character(), url = col_character(), season = col_character())) Pergunta 1: A longevidade das séries está associada a sua qualidade Estamos interessados em avaliar se a longevidade das séries está associada á sua qualidade. Ou seja, as séries duram mais devido á sua qualidade?
+É importante esclarecer os critérios a serem adorados para longevidade e qualidade.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/1/01/eda-projeto-1-checkpoint-1/">
+                <h3 class="media-heading">EDA Projeto 1 Checkpoint 1</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 0001
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">episodios = read_csv(here(&quot;data/series_from_imdb.csv&quot;), progress = FALSE, col_types = cols(.default = col_double(), series_name = col_character(), episode = col_character(), url = col_character(), season = col_character())) %&gt;% filter(series_name %in% c(&quot;Friends&quot;, &quot;How I Met Your Mother&quot;)) Problema: Escolher entre 2 e 4 séries da base de dados e responder as seguintes questões:
+As séries escolhidas foram How I Met Your Mother e Friends, que são séries do mesmo gênero, com temáticas parecidas e com um numero próximo de temporadas.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         2 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = '\/1\/01\/eda-projeto-1-checkpoint-1\/';
+          
+            this.page.identifier = '\/1\/01\/eda-projeto-1-checkpoint-1\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+    
+  </body>
+</html>
+
